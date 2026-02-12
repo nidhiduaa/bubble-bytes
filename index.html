@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;700;800&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Gradients -->
+    <!-- Background Gradients & Particles handled by CSS/JS -->
+
+    <!-- Navigation Arrows -->
+    <button id="prev-btn" class="nav-btn hidden" aria-label="Previous Section">❮</button>
+    <button id="next-btn" class="nav-btn hidden" aria-label="Next Section">❯</button>
+
+    <!-- LANDING PAGE -->
+    <section id="landing" class="active section-center">
+        <h1 class="main-title">Will you be my valentine?</h1>
+        <p class="subtitle">In Every Universe, It’s You.</p>
+        <div class="buttons-container">
+            <button id="yes-btn" class="btn btn-primary">YES</button>
+            <button id="no-btn" class="btn btn-secondary">No</button>
+        </div>
+    </section>
+
+    <!-- CELEBRATION / TRANSITION -->
+    <section id="celebration" class="hidden section-center">
+        <h1 class="huge-text">I Love You 💕</h1>
+    </section>
+
+    <!-- SECTION 1: How It Started -->
+    <section id="how-it-started" class="hidden section-center">
+        <h2>How It Started</h2>
+        <div class="polaroid">
+            <!-- Image of Us -->
+            <img src="1.jpeg" alt="Us" class="polaroid-img">
+            <div class="caption">💋</div>
+        </div>
+        <div class="text-content">
+            <p>And after everything…</p>
+            <p>after all the little moments that built us —</p>
+            <p>I’m still so grateful it’s you.</p>
+            <br>
+            <p>You feel like peace.</p>
+            <p>You feel like home.</p>
+            <br>
+            <p>And I wouldn’t trade that for anything.</p>
+            <p class="highlight-text">Thank you for choosing me.</p>
+            <p class="highlight-text">I will always choose you too.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Virtual Gift Card -->
+    <section id="gift-card" class="hidden section-center">
+        <h2>Virtual Valentine Gift Card</h2>
+        <div class="scratch-container">
+            <div id="scratch-cover">
+                <p>Scratch to Redeem!</p>
+            </div>
+            <div class="scratch-reveal">
+                <!-- Image of Gift -->
+                <img src="2.jpeg" alt="Gift Reward" class="reveal-img">
+                <p class="coupon-text">Redeem for 1 cuddle</p>
+            </div>
+            <canvas id="scratch-canvas"></canvas>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Inside My Head -->
+    <section id="brain-map" class="hidden section-center">
+        <h2>Inside My Head</h2>
+        <div class="brain-bubbles-container">
+            <div class="brain-bubble large" data-text="Thinking about you ❤️" style="--d: 0s; background: #ff99aa;">
+                <span>49%</span>
+            </div>
+            <div class="brain-bubble medium" data-text="Replaying memories 📸" style="--d: 1s; background: #ffb3c1;">
+                <span>30%</span>
+            </div>
+            <div class="brain-bubble medium" data-text="Planning our future 🏡" style="--d: 0.5s; background: #ffccd5;">
+                <span>20%</span>
+            </div>
+            <div class="brain-bubble small" data-text="Trying to focus on myself 🧘‍♀️"
+                style="--d: 1.5s; background: #fff0f5;">
+                <span>1%</span>
+            </div>
+        </div>
+        <div id="brain-popup" class="hidden"></div>
+        <p class="instruction-text">Tap the thoughts!</p>
+    </section>
+
+    <!-- SECTION 5: Slot Machine -->
+    <section id="slot-machine" class="hidden section-center">
+        <h2>Love Slot Machine</h2>
+        <div class="slots">
+            <div class="slot" id="slot1">❓</div>
+            <div class="slot" id="slot2">❓</div>
+            <div class="slot" id="slot3">❓</div>
+        </div>
+        <button id="spin-btn" class="btn btn-primary">Spin!</button>
+        <p id="slot-message" class="hidden"></p>
+    </section>
+
+    <!-- SECTION 6: The Moment Everything Changed -->
+    <section id="moment-changed" class="hidden section-center">
+        <h2>The Moment Everything Changed</h2>
+        <div class="polaroid">
+            <!-- Moment SVG -->
+            <!-- Image of Moment -->
+            <img src="3.jpeg" alt="Moment" class="polaroid-img">
+        </div>
+        <div class="text-content">
+            <p>I don’t know if you realized it,</p>
+            <p>but the day we started talking</p>
+            <p>something shifted in me.</p>
+            <br>
+            <p>You became my favorite notification.</p>
+            <p>My safest place.</p>
+            <p>My best decision.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 7: Bake With Me -->
+    <section id="baking" class="hidden section-center">
+        <h2>Bake With Me</h2>
+        <div class="recipe-area">
+            <!-- Cupcake SVG -->
+            <svg id="bowl" width="100" height="100" viewBox="0 0 100 100" style="filter: grayscale(1);">
+                <path d="M20 60 L30 90 H70 L80 60 Z" fill="#D2691E" />
+                <circle cx="50" cy="50" r="30" fill="#FFC0CB" />
+                <circle cx="50" cy="40" r="5" fill="red" />
+            </svg>
+            <div class="ingredients">
+                <button class="ingredient-btn" data-step="1">Add 1 cup of love</button>
+                <button class="ingredient-btn" data-step="2">Mix with 2 spoons of patience</button>
+                <button class="ingredient-btn" data-step="3">Bake at 365 days a year</button>
+            </div>
+            <p id="baking-status">Let's bake something special!</p>
+        </div>
+    </section>
+
+    <!-- SECTION 8: Mini Game -->
+    <section id="mini-game" class="hidden section-center">
+        <h2>Catch My Heart</h2>
+        <p>Catch 10 hearts to unlock my letter!</p>
+        <div id="game-area">
+            <div id="catcher">🧺</div>
+        </div>
+        <p>Score: <span id="score">0</span></p>
+        <button id="unlock-letter-btn" class="hidden btn btn-primary">💌 Unlock My Letter</button>
+    </section>
+
+    <!-- LOVE LETTER -->
+    <section id="love-letter" class="hidden section-center">
+        <h2>My Letter To You</h2>
+        <div class="letter-content card">
+            <p>You didn’t just steal my heart.</p>
+            <p>You made it feel safe.</p>
+            <p>And that’s even better.</p>
+            <br>
+            <p class="animate-pulse">Stay with me.</p>
+            <p>Not just today.</p>
+            <p>But on all the ordinary days too.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 9: Multiverse -->
+    <section id="multiverse" class="hidden section-center">
+        <h2>Choose a Universe</h2>
+        <div class="universe-options">
+            <button class="universe-btn" data-theme="space">🌌 Space</button>
+            <button class="universe-btn" data-theme="fantasy">🏰 Fantasy</button>
+            <button class="universe-btn" data-theme="cyber">🤖 Cyberpunk</button>
+            <button class="universe-btn" data-theme="nature">🌿 Nature</button>
+        </div>
+        <div id="universe-message" class="hidden text-content"></div>
+    </section>
+
+    <!-- HOLD TO COMMIT -->
+    <section id="hold-commit" class="hidden section-center">
+        <p class="fade-text">Love isn’t a click.</p>
+        <p class="fade-text">It’s a choice.</p>
+        <button id="hold-btn" class="circle-btn">
+            🤍
+            <svg class="progress-ring" width="120" height="120">
+                <circle class="progress-ring__circle" stroke="white" stroke-width="4" fill="transparent" r="52" cx="60"
+                    cy="60" />
+            </svg>
+        </button>
+        <p>Hold to choose me</p>
+    </section>
+
+    <!-- FINAL PAGE -->
+    <section id="final-page" class="hidden section-center">
+        <button id="last-click-btn" class="btn btn-primary">💗 One Last Click</button>
+
+        <div id="final-content" class="hidden">
+            <h1 class="huge-text">I love you 🫀</h1>
+            <div class="scrolling-lyrics">
+                <p>So here we are.</p>
+                <p>After all the laughs,</p>
+                <p>the late nights,</p>
+                <p>the little moments that meant everything.</p>
+                <p>And if I had to start over…</p>
+                <p>I’d still choose you.</p>
+                <p>Every time.</p>
+                <p>In every lifetime.</p>
+                <p>I don’t know what the future holds.</p>
+                <p>But I know this —</p>
+                <p>if you’re in it,</p>
+                <p>I’m not afraid of anything.</p>
+                <p>Let’s keep choosing each other.</p>
+                <p>Again and again.</p>
+                <p>Thank you for being mine.</p>
+                <h2 class="big-final">Happy Valentine’s Day, my love. 💗</h2>
+            </div>
+            <button id="replay-btn" class="btn btn-secondary">🤍 Replay Our Story</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
